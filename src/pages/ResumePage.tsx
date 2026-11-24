@@ -1,0 +1,9 @@
+import { Download } from '../components/icons';
+import { PROFILE_DATA } from '../data/profile';
+import { RESUME_DATA } from '../data/resume';
+import { DynamicSkillsMatrix } from '../components/portfolio/DynamicSkillsMatrix';
+
+export function ResumePage({ mergedSkills }: { mergedSkills: Record<string, Array<{name:string;isNew:boolean;source:string}>> }) {
+  const download = () => { const link = document.createElement('a'); link.href = PROFILE_DATA.resumeFile; link.download = 'Banda_Karthik_Resume.pdf'; document.body.appendChild(link); link.click(); document.body.removeChild(link); };
+  return <div className="space-y-6"><div className="p-6 rounded-lg bg-[#161b22] border border-[#30363d] flex justify-between gap-4"><div><h2 className="text-xl font-bold text-white">{PROFILE_DATA.name} — Curriculum Vitae</h2><p className="text-xs text-purple-400">{PROFILE_DATA.title} | {PROFILE_DATA.location}</p></div><button onClick={download} className="px-4 py-2 rounded-md bg-purple-600 text-white text-xs font-bold flex items-center gap-2"><Download className="w-4 h-4"/>Download PDF Resume</button></div><div className="p-5 rounded-md bg-[#0d1117] border border-[#30363d]"><h3 className="text-xs font-bold text-[#8b949e] uppercase">Professional Summary</h3><p className="mt-2 text-xs text-slate-300">{RESUME_DATA.summary}</p></div><DynamicSkillsMatrix mergedSkills={mergedSkills}/><div className="p-5 rounded-md bg-[#0d1117] border border-[#30363d]"><h3 className="text-xs font-bold text-white uppercase">Education</h3><div className="mt-3 space-y-3">{RESUME_DATA.education.map(education => <div key={education.degree} className="flex justify-between text-xs"><div><strong className="block text-white">{education.degree}</strong><span className="text-slate-400">{education.institution}</span></div><span>{education.year}</span></div>)}</div></div></div>;
+}

@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+html {
+  background: #0d1117;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.text-xs {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+
+.text-sm {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+}
+
+.text-base {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
+.text-lg {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
+}
+
+.text-xl {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+}
+
+[class*="text-[10px]"],
+[class*="text-[11px]"] {
+  font-size: 0.75rem !important;
+  line-height: 1.125rem !important;
+}
+
+.contribution-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 14px);
+  grid-auto-columns: minmax(8px, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.contribution-cell {
+  width: 100%;
+  height: 14px;
+  border-radius: 3px;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/api/github/:path*", "destination": "https://api.github.com/:path*" },
+    { "source": "/api/leetcode/:path*", "destination": "https://leetcode-api-faisalshohag.vercel.app/:path*" },
+    { "source": "/api/hackerrank/:path*", "destination": "https://www.hackerrank.com/:path*" },
+    { "source": "/api/contributions/:path*", "destination": "https://github-contributions-api.jogruber.de/v4/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
