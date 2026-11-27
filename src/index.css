@@ -54,6 +54,7 @@ textarea {
   grid-auto-columns: minmax(8px, 1fr);
   gap: 4px;
   width: 100%;
+  min-width: 900px;
 }
 
 .contribution-cell {

@@ -30,7 +30,7 @@ export function Heatmap({ activityData }: { activityData: ActivityData }) {
           </select>
           <p className="mt-3 text-sm text-[#8b949e]"><strong className="block text-lg text-white">{yearlyContributions}</strong>contributions</p>
         </div>
-        <div className="min-w-0">
+        <div className="min-w-0 overflow-x-auto">
           <div className="contribution-grid">
             {aligned.map(day => <div key={day.index} className={`contribution-cell ${day.level === -1 ? 'bg-transparent' : colors[day.level] || colors[0]} ${day.isToday ? 'ring-2 ring-cyan-400 ring-offset-1 ring-offset-[#0d1117]' : ''}`} title={day.date ? `${day.date}: ${day.count} total (GitHub ${day.githubCount}, LeetCode ${day.leetcodeCount}, HackerRank ${day.hackerrankCount})` : ''}/>)}
           </div>
